@@ -10,7 +10,7 @@ class DataBase:
 
     def connect(self):
         mongod = pymongo.MongoClient(
-            "DataBase URL")
+            "6478957504:AAHtwgtxet2GHbocfMQWs3EkkpJdpH8M8ug")
 
         database = mongod["TABLE"]
 
