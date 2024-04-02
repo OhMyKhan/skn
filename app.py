@@ -86,11 +86,11 @@ class ChatBot:
                 context.bot.send_chat_action(chat_id=user_id, action=ChatAction.TYPING, timeout=1)
 
                 reply_markup = InlineKeyboardMarkup([
-                    [InlineKeyboardButton(text="🤴🏻 Gender 👸🏻", callback_data='SetGender')]
+                    [InlineKeyboardButton(text="🤴🏻 Kelamin Lo 👸🏻", callback_data='SetGender')]
                 ])
 
                 # User info
-                update.message.reply_text(text="🛠Settings", reply_markup=reply_markup)
+                update.message.reply_text(text="🛠Pengaturan", reply_markup=reply_markup)
 
             # if user stop the bot
             except telegram.error.Unauthorized:
@@ -357,8 +357,8 @@ class ChatBot:
                 my_gender = data.get("gender")
 
                 reply_markup = InlineKeyboardMarkup([
-                    [InlineKeyboardButton(text="🤴🏻 Boy", callback_data=f'SetBoy_M')],
-                    [InlineKeyboardButton(text="👸🏻 Girl", callback_data=f'SetGirl_M')],
+                    [InlineKeyboardButton(text="🤴🏻 Cowo", callback_data=f'SetBoy_M')],
+                    [InlineKeyboardButton(text="👸🏻 Cewe", callback_data=f'SetGirl_M')],
                 ])
 
                 query.edit_message_text(text=f"Select your gender\nCurrent: {my_gender}", reply_markup=reply_markup)
@@ -369,8 +369,8 @@ class ChatBot:
                 partner_gender = data.get("partner_gender")
 
                 reply_markup = InlineKeyboardMarkup([
-                    [InlineKeyboardButton(text="🤴🏻 Boy", callback_data=f'SetBoy_P')],
-                    [InlineKeyboardButton(text="👸🏻 Girl", callback_data=f'SetGirl_P')],
+                    [InlineKeyboardButton(text="🤴🏻 Cowo", callback_data=f'SetBoy_P')],
+                    [InlineKeyboardButton(text="👸🏻 Cewe", callback_data=f'SetGirl_P')],
                 ])
 
                 query.edit_message_text(text=f"Select partner gender\nCurrent: {partner_gender}",
@@ -469,7 +469,7 @@ class ChatBot:
 
 
 if __name__ == '__main__':
-    bot_name = "Bot"
-    bot_key = "SECRET KEY"
+    bot_name = "Skindaz Anonymous Bot"
+    bot_key = "6719125107:AAHz-pcQz80vxYCfdm09nnkM7l7gRQep0ko"
 
     ChatBot(bot_name, bot_key)
